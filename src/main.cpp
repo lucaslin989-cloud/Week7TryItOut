@@ -9,7 +9,7 @@ class Vector2D{
         double y;
         Vector2D(double x=0, double y=0):x(x), y(y){}
 
-        Vector2D add(const Vector2D&other)const{
+        Vector2D operator+(const Vector2D& other)const{
             return{x+other.x,y+other.y};
         }
 
@@ -19,7 +19,7 @@ class Vector2D{
 int main(){
     Vector2D position(10,5);
     Vector2D velocity(1,-2);
-    position=position.add(velocity);
+    position=position+velocity;
 
     cout<<"Position: ( "<<position.x<<", "<<position.y<<")\n";
 
